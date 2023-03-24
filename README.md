@@ -1,2 +1,2 @@
 # Projeto-Financias-Big-Data
-<img src="<img src="/assets/img/MarineGEO_logo.png" alt="MarineGEO circle logo" style="height: 100px; width:100px;"/>" alt="MarineGEO circle logo" style="height: 100px; width:100px;"/>
+## Objetivo é criar uma interface para analise de ações listadas na B3
