@@ -1,2 +1,2 @@
 # Projeto-Financias-Big-Data
-![Alt text](https://static.poder360.com.br/2017/03/b3_bovespacetip.jpg "Optional title" width: 10px; height: 10px)
+<img src="<img src="/assets/img/MarineGEO_logo.png" alt="MarineGEO circle logo" style="height: 100px; width:100px;"/>" alt="MarineGEO circle logo" style="height: 100px; width:100px;"/>
