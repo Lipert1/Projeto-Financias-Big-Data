@@ -4,7 +4,7 @@ import pandas_datareader.data as web
 import yfinance as yf
 import streamlit as st
 import datetime
-
+from empresas_import import *
 
 
 st.write("""
@@ -28,25 +28,46 @@ st.line_chart(tickerDf.Close)
 st.write("""
 # Grafico Empresas  
 """)
-d = st.date_input(
+d_empresa = st.date_input(
     "Data a ser analizado a acao:",
     datetime.date(2020, 1, 1))
 
-opcao = st.selectbox(
+opcao_empresa = st.selectbox(
     'Lista Empresas:',
-    ('VALE3', 'PETR4', 'ITUB3'))
+    (empresas_pd))
 
-tickerData = yf.Ticker(f'{opcao}.SA')
+tickerData_empresa = yf.Ticker(f'{opcao_empresa}.SA')
 
-tickerDf = tickerData.history(period='1d', start=f'{d}', end=None)
+tickerDf_empresa = tickerData_empresa.history(period='1d', start=f'{d_empresa}', end=None)
 
-st.line_chart(tickerDf.Close)
+st.line_chart(tickerDf_empresa.Close)
 
-df_empresas = pd.DataFrame(tickerData.dividends)
+df_empresas = pd.DataFrame(tickerData_empresa.dividends)
 df_empresas.columns = ['Dividendos']
 
 st.table(df_empresas)
 
+st.write("""
+# Grafico Fundos  
+""")
+d_fundos = st.date_input(
+    "Data a ser analizado do Fundo:",
+    datetime.date(2020, 1, 1))
+
+opcao_fundo = st.selectbox(
+    'Lista Empresas:',
+    (fundos_pd))
+
+tickerData_fundo = yf.Ticker(f'{opcao_fundo}.SA')
+
+tickerDf_fundo = tickerData.history(period='1d', start=f'{d_fundos}', end=None)
+
+st.line_chart(tickerDf_fundo.Close)
+
+df_fundo = pd.DataFrame(tickerData_fundo.dividends)
+df_fundo.columns = ['Dividendos']
+
+st.table(df_empresas)
 
 
 
